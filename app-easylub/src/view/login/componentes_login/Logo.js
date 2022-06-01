@@ -4,7 +4,7 @@ import {View, Image, StyleSheet } from 'react-native'
 export default function Logo(){
     return<>
         <View style={estilos.containerLogo}>
-              <Image style={estilos.logo} source={require('../../assets/icon-assets/engrenagem-verde.png')}/>               
+              <Image style={estilos.logo} source={require('../../../../assets/icon-assets/engrenagem-verde.png')}/>               
         </View>
     </>
 }
