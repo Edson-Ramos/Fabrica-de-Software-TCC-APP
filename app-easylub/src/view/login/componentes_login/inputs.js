@@ -33,7 +33,7 @@ export default function Inputs(){
      })
       .then(response => {
              if (response.status != 200){                                 
-               return  Alert.alert("ErroR","Verifique Seu Email e Senha") 
+               return  Alert.alert("Erro","Verifique Seu Email e Senha") 
              } 
             else{
               navigation.reset({
@@ -91,7 +91,9 @@ btnSubmit:{
     borderRadius: 7,
     },
 submitText:{
+  textAlign:"center",
   color:'#FFF',
-  fontSize:18
+  fontSize:18,
+  width:"100%"
 },
 })
