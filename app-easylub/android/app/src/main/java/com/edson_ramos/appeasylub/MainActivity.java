@@ -9,6 +9,8 @@ import com.facebook.react.ReactRootView;
 
 import expo.modules.ReactActivityDelegateWrapper;
 
+import  com . rnfs . Pacote RNFSP ; // <------- adicionar pacote
+
 import android.os.Bundle;
 
 import com.facebook.react.ReactActivityDelegate;
@@ -78,3 +80,13 @@ public class MainActivity extends ReactActivity {
     super.invokeDefaultOnBackPressed();
   }
 }
+
+public  class  MainApplication  extends  Application  implements  ReactApplication {
+    // ... 
+    @ Override 
+    protected  List < ReactPackage > getPackages () {
+       return  Arrays .< ReactPackage > asList (
+         new  MainReactPackage (), // <---- adiciona vírgula 
+        new  RNFSPackage () // <---------- adiciona pacote
+      );
+    }

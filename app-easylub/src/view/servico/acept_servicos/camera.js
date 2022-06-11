@@ -54,10 +54,7 @@ export default function App() {
   async function takePicture() {
     if (camRef) {
 
-      const data = await camRef.current.takePictureAsync();
-      //boa pratica para saber oque uma função assincrona retorna,chamar
-      //console log. Nesse caso retorna um objeto,neste caso um desses 
-      //objeto e uir, por isso fica data.uir
+      const data = await camRef.current.takePictureAsync();      
       setCheckPicture(data.uri);
       setOpen(true)
     }
@@ -65,10 +62,13 @@ export default function App() {
 
   async function salvePicture() {
     const assent = await MediaLibrary.createAssetAsync(checkPicture)
-       .then(() => {
-
+    .then(() => {
         alert("Salvo com sucesso")
         setOpen(false)
+        navigation.reset({
+        index:0,
+        routes:[{name: "Servicos"}] 
+    })
 
       })
       .catch((error) => {

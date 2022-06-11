@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Servicos from '../view/servico/index'
 import Login from '../view/login/login'
 import Camera from '../view/servico/acept_servicos/camera'
+import Aceitos from '../view/servico/acept_servicos/aceitos';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,8 +17,10 @@ export default function App_rotas(){
                     options={{
                         headerShown:false
                     }}
+                    
                     />
                     <Stack.Screen name="Camera" component={Camera}/>
+                    <Stack.Screen name="Aceitos" component={Aceitos}/>
                 </Stack.Navigator>
             </NavigationContainer>
 }

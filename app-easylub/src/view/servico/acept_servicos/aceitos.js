@@ -21,8 +21,9 @@ export default function Meus_servicos({route}) {
     mediaTypes: ImagePicker.MediaTypeOptions.All,
     allowsEditing: true,
     aspect: [4, 3],
-    quality: 1,
-  });
+    quality: 1,    
+    base64: true
+  },);
     //callback estta relacionado uma função anonima e retorna
     //algum parametro
        if(result.cancelled){
@@ -43,7 +44,6 @@ export default function Meus_servicos({route}) {
 
   function salvar(){
     AsyncStorage.getItem("nome", (err, result) => {setNome(result); });
-    
     const dados_servicos = {
             idServ : route.params.id,
             codMaq : route.params.codMaq,
@@ -60,7 +60,7 @@ export default function Meus_servicos({route}) {
             status : status,
             obs : obs,
             nome_tec: nome,
-            img : checkPicture.uri
+            img : checkPicture.base64
         }
         if(checkPicture == ""){
            return alert("Selecione Uma Imagem")

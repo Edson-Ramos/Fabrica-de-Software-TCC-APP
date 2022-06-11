@@ -78,6 +78,11 @@ import org.apache.tools.ant.taskdefs.condition.Os
  * ]
  */
 
+dependências {
+     .. .
+    projeto de implementação( ' :react-native-fs ' )
+}
+
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 
 project.ext.react = [

@@ -25,10 +25,10 @@ useEffect(()=>{
     })
     .then(data => {  
           if(searchText === ""){
-            setDataSource(data.files)
+            setDataSource(data.arquivos)
           }else{
             setDataSource(
-              data.files.filter(item =>{
+              data.arquivos.filter(item =>{
                 if(item.status.toLowerCase().indexOf(searchText.toLocaleLowerCase())> -1){
                   return true;
                 }else{
