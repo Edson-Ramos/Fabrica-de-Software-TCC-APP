@@ -15,6 +15,9 @@ export default function Meus_servicos({route}) {
   const [obs, setObs] = useState("")
   const [nome, setNome] = useState(null)
 
+  
+    AsyncStorage.getItem("nome", (err, result) => {setNome(result); });
+
 
  async function searhPicture(){
   let result = await ImagePicker.launchImageLibraryAsync({
@@ -43,7 +46,6 @@ export default function Meus_servicos({route}) {
   }
 
   function salvar(){
-    AsyncStorage.getItem("nome", (err, result) => {setNome(result); });
     const dados_servicos = {
             idServ : route.params.id,
             codMaq : route.params.codMaq,
@@ -203,7 +205,7 @@ if(route.params === undefined){
           <Select             
             onValueChange={(value) =>setStatus(value)}
             items = {[
-              {label: 'Finalizado', value: 'Finalizado'},
+              {label: 'Concluído', value: 'Concluido'},
               {label: 'Aguardando', value: 'Aguardando'},
             ]}
           />

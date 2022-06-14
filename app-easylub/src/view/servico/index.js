@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, SafeAreaView } from 'react-native';
+import { Alert, Text, View, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -12,6 +12,8 @@ import Meus_servicos from './acept_servicos/aceitos'
 const Tab = createBottomTabNavigator();
 
 export default function Servicos() {
+
+ 
   return (
     <Tab.Navigator
       initialRouteName="Todos"
@@ -59,6 +61,7 @@ export default function Servicos() {
           }
         }}
       />
+      
     </Tab.Navigator>
   );
 }
